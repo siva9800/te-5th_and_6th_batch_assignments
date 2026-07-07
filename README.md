@@ -1,7 +1,13 @@
  HEAD
+ HEAD
 # te-5th_and_6th_batch_assignments
 
 # Remote Backend and State Locking Demo
+
+## Assignment 1
+
+Completed Terraform Remote Backend assignment
+ c9c77f5 (Completed Assignment 1)
 
 This folder demonstrates Terraform's remote backend capabilities and state locking mechanisms using AWS S3 and DynamoDB.
 
