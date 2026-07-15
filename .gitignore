@@ -2,4 +2,24 @@
 *.tfstate
 *.tfstate.*
 .terraform.lock.hcl
+
+# Variable files containing secrets
 *.tfvars
+!terraform.tfvars.example
+
+crash.log
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive key files
+*.pem
+*.key
+
+# Local editor files
+.vscode/
+.idea/
+.DS_Store
