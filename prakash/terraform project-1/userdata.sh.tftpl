@@ -1,0 +1,31 @@
+#!/bin/bash
+# ============================================================
+# userdata.sh.tftpl
+# WHY THIS FILE EXISTS:
+# This script is passed to AWS as "user data." AWS automatically runs
+# it as root the FIRST time (and only the first time) the instance
+# boots. This is how we install and configure the web server without
+# ever manually SSHing in — the whole setup is automated.
+#
+# The .tftpl extension means Terraform treats this as a TEMPLATE — the
+# ${owner_name} below gets replaced with your actual name (from
+# terraform.tfvars) at apply-time, via the templatefile() function
+# used in main.tf.
+# ============================================================
+
+yum update -y
+# Updates all installed packages to their latest versions — standard
+# first step so we're not installing on top of an outdated OS image.
+
+yum install -y httpd
+# Installs Apache (httpd), a web server. This is what will actually
+# serve the "Hello" page when someone visits port 80.
+
+systemctl enable --now httpd
+# "enable" = start httpd automatically on every future reboot.
+# "--now" = also start it immediately, right now, in this same command.
+
+echo "Hello from ${owner_name} web server" > /var/www/html/index.html
+# Apache serves whatever is in /var/www/html/ as the website's homepage.
+# This line creates that homepage file with a simple greeting text,
+# proving the server is alive and correctly configured.
