@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: project-config
+data:
+  App_Name: "COTY AMS"
+  App_Mode: "Development"
