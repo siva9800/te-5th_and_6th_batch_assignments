@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: project-config-screte
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.27
+      env:
+        - name: App_Name
+          valueFrom:
+            configMapKeyRef:
+              name: project-config
+              key: App_Name
+        - name: App_Mode
+          valueFrom:
+            configMapKeyRef:
+              name: project-config
+              key: App_Mode
+        - name: App_Password
+          valueFrom:
+            secretKeyRef:
+              name: project-secret
+              key: App_Password
+
