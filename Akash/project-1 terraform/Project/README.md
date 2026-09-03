@@ -1,6 +1,6 @@
 # AWS Terraform Project
 
-This Terraform project provisions a simple AWS environment with:
+This Terraform project provisions a simple AWS environment with
 
 - 1 VPC
 - 1 public subnet
