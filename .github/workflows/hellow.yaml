@@ -1,0 +1,22 @@
+# .github/workflows/hello.yml
+name: Hello World
+
+on:
+  push:  
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print greeting
+        run: echo "Hello, GitHub Actions!"
+
+      - name: Show runner info
+        run: |
+          echo "Running on: $RUNNER_OS"
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Triggered by: ${{ github.actor }}"
+
+      - name: List files
+        run: ls -la
