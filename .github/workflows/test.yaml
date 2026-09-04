@@ -1,0 +1,31 @@
+name: DevOps Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      example_name:
+        description: Enter your name
+        required: true
+        default: Rohitha
+
+env:
+  COURSE: DevOps
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Greeting
+        run: echo "Hello, ${{ github.event.inputs.example_name }}!"
+
+      - name: Runner Details
+        run: |
+          echo "Runner OS: $RUNNER_OS"
+          echo "Runner Architecture: $RUNNER_ARCH"
+
+      - name: Course
+        run: ' echo "Course: $COURSE" '
+
+      - name: Secret
+        run: ' echo "Secret: ${{ secrets.MY_SECRET }}" '
