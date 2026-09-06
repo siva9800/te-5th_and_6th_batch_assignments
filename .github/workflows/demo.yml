@@ -17,7 +17,8 @@ jobs:
 
     steps:
       - name: Greeting
-        run: echo "Hello,${{inputs.name}}!"
+        run: |
+          echo "Hello,${{inputs.name}}!"
 
       - name: Runner Details
         run: |
@@ -25,16 +26,20 @@ jobs:
           echo "Architecture: ${{ runner.arch}}"
           
       - name: User input
-        run: echo"your name is: ${{inputs.name}}"
+        run: |
+          echo"your name is: ${{inputs.name}}"
 
       - name: Environment Variable
-        eun: echo " Course: $COURSE"
+        run: |
+          echo " Course: $COURSE"
 
       - name: Secret
-        run: echo "Secret: ${{ Secrets.MY_SECRET }}"
+        run: |
+          echo "Secret: ${{ Secrets.MY_SECRET }}"
 
       - name: Admin bonus
         if: ${{inputs.name == 'admin' }}
-        run: echo "Welcome Admin!"
+        run: |
+          echo "Welcome Admin!"
 
     
