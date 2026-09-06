@@ -27,7 +27,7 @@ jobs:
           
       - name: User input
         run: |
-          echo"your name is: ${{inputs.name}}"
+          echo "your name is: ${{inputs.name}}"
 
       - name: Environment Variable
         run: |
