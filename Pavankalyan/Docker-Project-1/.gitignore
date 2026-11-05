@@ -1,0 +1,21 @@
+
+# Environment files and secrets
+**/.env
+*.env
+!.env.example
+
+# Node
+node_modules/
+**/node_modules/
+
+# React build
+frontend/build/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Git and OS
+.DS_Store
